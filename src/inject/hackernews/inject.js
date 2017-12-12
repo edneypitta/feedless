@@ -3,4 +3,5 @@ const destroyElements = () =>
     .querySelectorAll('#hnmain > tbody > tr:nth-child(3)')
     .forEach(node => node.parentNode.removeChild(node))
 
-destroyElements()
+if (document.location.pathname !== '/item')
+  destroyElements()
