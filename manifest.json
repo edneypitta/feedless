@@ -1,0 +1,36 @@
+{
+  "name": "Feedless",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extensions prevents procrastination by removing news feed from Facebook, Twitter, LinkedIn and Hacker News.",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "https://www.facebook.com/*",
+    "https://twitter.com/*",
+    "https://www.linkedin.com/*",
+    "https://news.ycombinator.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [ "https://www.facebook.com/*" ],
+      "js": [ "src/inject/facebook/inject.js" ]
+    },
+    {
+      "matches": [ "https://twitter.com/*" ],
+      "js": [ "src/inject/twitter/inject.js" ]
+    },
+    {
+      "matches": [ "https://www.linkedin.com/*" ],
+      "js": [ "src/inject/linkedin/inject.js" ]
+    },
+    {
+      "matches": [ "https://news.ycombinator.com/*" ],
+      "js": [ "src/inject/hackernews/inject.js" ]
+    }
+  ]
+}
