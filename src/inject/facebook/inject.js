@@ -3,4 +3,4 @@ const destroyElements = () =>
 		.querySelectorAll('[id^=topnews_main_stream], .home_right_column > .pagelet')
 		.forEach(node => node.parentNode.removeChild(node))
 
-setInterval(destroyElements, 1000)
+setInterval(destroyElements, 20)

@@ -5,9 +5,7 @@
   "description": "This extensions prevents procrastination by removing news feed from Facebook, Twitter, LinkedIn and Hacker News.",
   "homepage_url": "http://extensionizr.com",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "48": "icons/icon48.png"
   },
   "permissions": [
     "https://www.facebook.com/*",
@@ -18,18 +16,22 @@
   "content_scripts": [
     {
       "matches": [ "https://www.facebook.com/*" ],
-      "js": [ "src/inject/facebook/inject.js" ]
+      "js": [ "src/inject/facebook/inject.js" ],
+      "run_at": "document_start"
     },
     {
       "matches": [ "https://twitter.com/*" ],
-      "js": [ "src/inject/twitter/inject.js" ]
+      "js": [ "src/inject/twitter/inject.js" ],
+      "run_at": "document_start"
     },
     {
       "matches": [ "https://www.linkedin.com/*" ],
-      "js": [ "src/inject/linkedin/inject.js" ]
+      "js": [ "src/inject/linkedin/inject.js" ],
+      "run_at": "document_start"
     },
     {
       "matches": [ "https://news.ycombinator.com/*" ],
+      "exclude_matches": [ "https://news.ycombinator.com/item*" ],
       "js": [ "src/inject/hackernews/inject.js" ]
     }
   ]
